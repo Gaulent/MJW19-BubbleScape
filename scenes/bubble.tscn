@@ -1,0 +1,32 @@
+[gd_scene load_steps=6 format=3 uid="uid://ciu3ddrbrffaq"]
+
+[ext_resource type="Script" path="res://scripts/bubble.gd" id="1_65f5k"]
+[ext_resource type="Texture2D" uid="uid://b2b06t1eda3hc" path="res://assets/objects/sonic.png" id="1_mox7d"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_corwc"]
+atlas = ExtResource("1_mox7d")
+region = Rect2(84, 34, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_puq4y"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_corwc")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_se7ov"]
+radius = 16.1245
+
+[node name="Bubble" type="Area2D"]
+collision_layer = 4
+script = ExtResource("1_65f5k")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_puq4y")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_se7ov")
