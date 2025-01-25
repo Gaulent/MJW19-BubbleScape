@@ -6,7 +6,6 @@ extends Label
 
 
 func alter_vignette():
-	print("testing")
 	var tween: Tween = create_tween()
 	tween.tween_property(shader.material, "shader_parameter/intensity", 0.2, 0.25).set_trans(Tween.TRANS_SINE)
 	tween.tween_property(shader.material, "shader_parameter/intensity", 0, 0.25).set_trans(Tween.TRANS_SINE)

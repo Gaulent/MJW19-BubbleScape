@@ -39,6 +39,7 @@ script = ExtResource("1_804pb")
 bubble_scene = ExtResource("2_atvko")
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_tt7ne")
 autoplay = "default"
 frame_progress = 0.160998

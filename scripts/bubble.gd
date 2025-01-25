@@ -6,7 +6,6 @@ extends Area2D
 func _ready() -> void:
 	var start: float =  position.x
 	var end: float = position.x + 10
-	print(start)
 	var tween:= create_tween().set_loops()
 	tween.tween_property(self, "position:x", end, 1).from(start).set_trans(Tween.TRANS_SINE)
 	tween.tween_property(self, "position:x", start, 1).from(end).set_trans(Tween.TRANS_SINE)
