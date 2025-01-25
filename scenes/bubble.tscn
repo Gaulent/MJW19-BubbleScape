@@ -1,17 +1,38 @@
-[gd_scene load_steps=6 format=3 uid="uid://ciu3ddrbrffaq"]
+[gd_scene load_steps=9 format=3 uid="uid://ciu3ddrbrffaq"]
 
 [ext_resource type="Script" path="res://scripts/bubble.gd" id="1_65f5k"]
-[ext_resource type="Texture2D" uid="uid://b2b06t1eda3hc" path="res://assets/objects/sonic.png" id="1_mox7d"]
+[ext_resource type="Texture2D" uid="uid://yqlxglgpyd12" path="res://assets/objects/burbuja.png" id="2_4o0h2"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_corwc"]
-atlas = ExtResource("1_mox7d")
-region = Rect2(84, 34, 32, 32)
+[sub_resource type="AtlasTexture" id="AtlasTexture_leiop"]
+atlas = ExtResource("2_4o0h2")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ymqtn"]
+atlas = ExtResource("2_4o0h2")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s5mb6"]
+atlas = ExtResource("2_4o0h2")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h7286"]
+atlas = ExtResource("2_4o0h2")
+region = Rect2(32, 32, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_puq4y"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_corwc")
+"texture": SubResource("AtlasTexture_leiop")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ymqtn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s5mb6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h7286")
 }],
 "loop": true,
 "name": &"default",
@@ -28,6 +49,9 @@ script = ExtResource("1_65f5k")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_puq4y")
+autoplay = "default"
+frame = 3
+frame_progress = 0.904874
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_se7ov")

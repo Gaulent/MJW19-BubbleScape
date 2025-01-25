@@ -42,8 +42,8 @@ bubble_scene = ExtResource("2_atvko")
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_tt7ne")
 autoplay = "default"
-frame_progress = 0.160998
+frame_progress = 0.582549
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 2.0
+wait_time = 7.0
 autostart = true
