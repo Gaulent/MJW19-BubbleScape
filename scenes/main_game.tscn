@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=4 uid="uid://bjpu7nnp0ohhu"]
+[gd_scene load_steps=30 format=4 uid="uid://bjpu7nnp0ohhu"]
 
 [ext_resource type="Texture2D" uid="uid://cmff2yw881eua" path="res://assets/tiles/SPA_Rock_Grass_Water.png" id="1_b7tsn"]
 [ext_resource type="Texture2D" uid="uid://l41t3o2hk8c6" path="res://assets/Sonic_the_Hedgehog_-_Labyrinth_Zone_Act_1.png" id="1_hm2gc"]
@@ -10,6 +10,8 @@
 [ext_resource type="PackedScene" uid="uid://60p4bprhkomn" path="res://scenes/bubble_spawn_point.tscn" id="7_ru8vf"]
 [ext_resource type="AudioStream" uid="uid://cbtksf8prlwar" path="res://assets/player/517759__danlucaz__game-fx-2.mp3" id="7_vkwmo"]
 [ext_resource type="Texture2D" uid="uid://b6tfvo1t4ptmg" path="res://assets/player/naufrago_v2_caminando.png" id="8_chy3c"]
+[ext_resource type="Texture2D" uid="uid://dibs0v8jb8htr" path="res://assets/player/Personaje_quieto.png" id="8_v2jxc"]
+[ext_resource type="Texture2D" uid="uid://c7bcwp3byvdp5" path="res://assets/player/naufrago_v2_saltando_1.png" id="9_0hgri"]
 [ext_resource type="Script" path="res://scripts/shredder.gd" id="11_7buy8"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_w53rh"]
@@ -296,9 +298,17 @@ sources/2 = SubResource("TileSetScenesCollectionSource_6soff")
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_dm5o4"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_de5fq"]
-atlas = ExtResource("8_chy3c")
+[sub_resource type="AtlasTexture" id="AtlasTexture_n2726"]
+atlas = ExtResource("8_v2jxc")
 region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8o8qo"]
+atlas = ExtResource("8_v2jxc")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_foi4l"]
+atlas = ExtResource("8_v2jxc")
+region = Rect2(0, 32, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_wrh5g"]
 atlas = ExtResource("8_chy3c")
@@ -328,10 +338,24 @@ region = Rect2(32, 64, 32, 32)
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_de5fq")
+"texture": SubResource("AtlasTexture_n2726")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8o8qo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_foi4l")
 }],
 "loop": true,
 "name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_0hgri")
+}],
+"loop": true,
+"name": &"jump",
 "speed": 5.0
 }, {
 "frames": [{
@@ -416,9 +440,8 @@ shape = SubResource("CapsuleShape2D_dm5o4")
 texture_filter = 1
 position = Vector2(4.76837e-07, 1)
 sprite_frames = SubResource("SpriteFrames_ro7d3")
-animation = &"idle"
+animation = &"jump"
 autoplay = "idle"
-frame_progress = 0.466222
 
 [node name="LungTimer" type="Timer" parent="Player"]
 wait_time = 25.0

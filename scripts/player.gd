@@ -38,8 +38,10 @@ func _physics_process(delta: float) -> void:
 		sprite.flip_h = true
 	if velocity.x > 0:
 		sprite.flip_h = false
-		
-	if abs(velocity.x) > 0:
+
+	if not is_on_floor():
+		sprite.animation = "jump"
+	elif abs(velocity.x) > 0:
 		sprite.animation = "walk"
 	else:
 		sprite.animation = "idle"
