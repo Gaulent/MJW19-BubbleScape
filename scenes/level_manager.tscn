@@ -1,6 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://dxeextkccir0l"]
+[gd_scene load_steps=8 format=3 uid="uid://dxeextkccir0l"]
 
 [ext_resource type="Script" path="res://scripts/level_manager.gd" id="1_6rjlq"]
+[ext_resource type="PackedScene" uid="uid://6n8e0xy1851o" path="res://scenes/start_screen.tscn" id="2_0ds04"]
+[ext_resource type="PackedScene" uid="uid://bjpu7nnp0ohhu" path="res://scenes/main_game.tscn" id="3_p8osh"]
 
 [sub_resource type="Animation" id="Animation_y7220"]
 length = 0.001
@@ -56,6 +58,8 @@ _data = {
 
 [node name="LevelManager" type="Node"]
 script = ExtResource("1_6rjlq")
+start_menu = ExtResource("2_0ds04")
+main_scene = ExtResource("3_p8osh")
 
 [node name="TransitionScreen" type="CanvasLayer" parent="."]
 
@@ -65,6 +69,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 color = Color(0, 0, 0, 0)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="TransitionScreen"]

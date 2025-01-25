@@ -45,7 +45,7 @@ texture_filter = 1
 position = Vector2(0, -8)
 sprite_frames = SubResource("SpriteFrames_tt7ne")
 autoplay = "default"
-frame_progress = 0.292615
+frame_progress = 0.527518
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 7.0
