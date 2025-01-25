@@ -36,6 +36,11 @@ func _physics_process(delta: float) -> void:
 	if velocity.x > 0:
 		sprite.flip_h = false
 		
+	if abs(velocity.x) > 0:
+		sprite.animation = "walk"
+	else:
+		sprite.animation = "idle"
+		
 
 	move_and_slide()
 
