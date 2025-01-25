@@ -49,7 +49,6 @@ script = ExtResource("1_65f5k")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_puq4y")
-autoplay = "default"
 frame = 3
 frame_progress = 0.904874
 
