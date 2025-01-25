@@ -3,12 +3,19 @@ extends Node
 @onready var animator:AnimationPlayer = $TransitionScreen/AnimationPlayer
 @export var start_menu:PackedScene
 @export var main_scene:PackedScene
+@export var opening_scene:PackedScene
 
 
 func _ready() -> void:
 	animator.play("fade_in")
 	
 func start_game():
+	animator.play("fade_out")
+	await animator.animation_finished
+	get_tree().change_scene_to_packed(opening_scene)
+	animator.play("fade_in")
+	
+func main_game():
 	animator.play("fade_out")
 	await animator.animation_finished
 	get_tree().change_scene_to_packed(main_scene)
@@ -20,5 +27,3 @@ func reset_level():
 	await animator.animation_finished
 	get_tree().reload_current_scene()
 	animator.play("fade_in")
-
-

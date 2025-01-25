@@ -1,9 +1,9 @@
 [gd_scene load_steps=5 format=3 uid="uid://6n8e0xy1851o"]
 
 [ext_resource type="FontFile" uid="uid://06ypoyhykp7r" path="res://assets/Font/Montserrat-ExtraBold.ttf" id="1_axfcf"]
-[ext_resource type="Script" path="res://scenes/start_screen.gd" id="1_qj17j"]
+[ext_resource type="Script" path="res://scripts/start_screen.gd" id="1_qj17j"]
 [ext_resource type="Texture2D" uid="uid://cdg2anbq0e41a" path="res://assets/boton inicio.png" id="2_8u5g0"]
-[ext_resource type="Script" path="res://scenes/animated_button.gd" id="3_72o0a"]
+[ext_resource type="Script" path="res://scripts/animated_button.gd" id="3_72o0a"]
 
 [node name="StartScreen" type="Control"]
 layout_mode = 3

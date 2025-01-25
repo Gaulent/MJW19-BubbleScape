@@ -1,0 +1,50 @@
+[gd_scene load_steps=8 format=3 uid="uid://gm1djqjtp017"]
+
+[ext_resource type="Script" path="res://scripts/opening_scene.gd" id="1_a1sh1"]
+[ext_resource type="Texture2D" uid="uid://dibs0v8jb8htr" path="res://assets/player/Personaje_quieto.png" id="1_iwv8v"]
+[ext_resource type="Texture2D" uid="uid://dkjbmo5o84v1o" path="res://assets/companion/Personaje_2_quieto_2.png" id="2_xchmm"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7ibq0"]
+atlas = ExtResource("1_iwv8v")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_x3chr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7ibq0")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dvur4"]
+atlas = ExtResource("2_xchmm")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_wxh8x"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dvur4")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="OpeningScene" type="Node2D"]
+texture_filter = 1
+script = ExtResource("1_a1sh1")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(585, 465)
+scale = Vector2(6, 6)
+sprite_frames = SubResource("SpriteFrames_x3chr")
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="."]
+position = Vector2(1298, 465)
+scale = Vector2(6, 6)
+sprite_frames = SubResource("SpriteFrames_wxh8x")
+flip_h = true
