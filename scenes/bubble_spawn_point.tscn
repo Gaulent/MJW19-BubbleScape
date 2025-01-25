@@ -1,0 +1,48 @@
+[gd_scene load_steps=8 format=3 uid="uid://60p4bprhkomn"]
+
+[ext_resource type="Script" path="res://scripts/bubble_spawn_point.gd" id="1_804pb"]
+[ext_resource type="PackedScene" uid="uid://ciu3ddrbrffaq" path="res://scenes/bubble.tscn" id="2_atvko"]
+[ext_resource type="Texture2D" uid="uid://b2b06t1eda3hc" path="res://assets/objects/sonic.png" id="3_nly7t"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ex8wu"]
+atlas = ExtResource("3_nly7t")
+region = Rect2(25, 11, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rgsbk"]
+atlas = ExtResource("3_nly7t")
+region = Rect2(44, 11, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p7ybd"]
+atlas = ExtResource("3_nly7t")
+region = Rect2(63, 11, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_tt7ne"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ex8wu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rgsbk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p7ybd")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="BubbleSpawnPoint" type="Node2D"]
+position = Vector2(0, 8)
+script = ExtResource("1_804pb")
+bubble_scene = ExtResource("2_atvko")
+
+[node name="Sprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_tt7ne")
+autoplay = "default"
+frame_progress = 0.160998
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 2.0
+autostart = true
