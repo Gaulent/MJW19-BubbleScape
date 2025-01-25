@@ -1,5 +1,6 @@
-[gd_scene load_steps=16 format=3 uid="uid://bs6j4j8rhw0we"]
+[gd_scene load_steps=17 format=3 uid="uid://bs6j4j8rhw0we"]
 
+[ext_resource type="Script" path="res://scripts/dead_player.gd" id="1_51vx4"]
 [ext_resource type="Texture2D" uid="uid://jdgl8lm7wwqs" path="res://assets/player/SPA_Player_Ginger.png" id="1_n3kh4"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rdtr4"]
@@ -119,6 +120,7 @@ _data = {
 
 [node name="DeadPlayer" type="Node2D"]
 position = Vector2(0, 462)
+script = ExtResource("1_51vx4")
 
 [node name="Sprite" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
@@ -129,4 +131,3 @@ frame_progress = 0.0457389
 libraries = {
 "": SubResource("AnimationLibrary_6vb7q")
 }
-autoplay = "death"

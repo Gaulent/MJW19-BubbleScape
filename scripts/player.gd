@@ -1,6 +1,7 @@
 extends CharacterBody2D
 
 
+
 @export var SPEED:float = 150.0
 @export var JUMP_VELOCITY:float = -500.0/ 2.0
 @export var inertia:float = 20.0

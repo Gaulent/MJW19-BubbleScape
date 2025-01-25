@@ -5,7 +5,7 @@
 [ext_resource type="Script" path="res://scripts/player.gd" id="2_48rla"]
 [ext_resource type="Texture2D" uid="uid://jdgl8lm7wwqs" path="res://assets/player/SPA_Player_Ginger.png" id="2_p75jg"]
 [ext_resource type="Script" path="res://scripts/lung_label.gd" id="4_obu7r"]
-[ext_resource type="Shader" path="res://scenes/vignette.gdshader" id="5_58agx"]
+[ext_resource type="Shader" path="res://scripts/vignette.gdshader" id="5_58agx"]
 [ext_resource type="PackedScene" uid="uid://bs6j4j8rhw0we" path="res://scenes/dead_player.tscn" id="6_by7fh"]
 [ext_resource type="PackedScene" uid="uid://60p4bprhkomn" path="res://scenes/bubble_spawn_point.tscn" id="7_ru8vf"]
 [ext_resource type="AudioStream" uid="uid://cbtksf8prlwar" path="res://assets/player/517759__danlucaz__game-fx-2.mp3" id="7_vkwmo"]
