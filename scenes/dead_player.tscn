@@ -1,0 +1,132 @@
+[gd_scene load_steps=16 format=3 uid="uid://bs6j4j8rhw0we"]
+
+[ext_resource type="Texture2D" uid="uid://jdgl8lm7wwqs" path="res://assets/player/SPA_Player_Ginger.png" id="1_n3kh4"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rdtr4"]
+atlas = ExtResource("1_n3kh4")
+region = Rect2(0, 190, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rru3c"]
+atlas = ExtResource("1_n3kh4")
+region = Rect2(38, 190, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_acpcq"]
+atlas = ExtResource("1_n3kh4")
+region = Rect2(76, 190, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bo1pj"]
+atlas = ExtResource("1_n3kh4")
+region = Rect2(114, 190, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8dtc5"]
+atlas = ExtResource("1_n3kh4")
+region = Rect2(152, 190, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_14pwv"]
+atlas = ExtResource("1_n3kh4")
+region = Rect2(190, 190, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dgkve"]
+atlas = ExtResource("1_n3kh4")
+region = Rect2(228, 190, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cx254"]
+atlas = ExtResource("1_n3kh4")
+region = Rect2(266, 190, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qrk7f"]
+atlas = ExtResource("1_n3kh4")
+region = Rect2(304, 190, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tbjrg"]
+atlas = ExtResource("1_n3kh4")
+region = Rect2(342, 190, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ro7d3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rdtr4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rru3c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_acpcq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bo1pj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8dtc5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_14pwv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dgkve")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cx254")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qrk7f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tbjrg")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="Animation" id="Animation_q37nb"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_fg5km"]
+resource_name = "death"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4, 3),
+"transitions": PackedFloat32Array(1, 2.14355, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, 0), Vector2(0, 462)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_6vb7q"]
+_data = {
+"RESET": SubResource("Animation_q37nb"),
+"death": SubResource("Animation_fg5km")
+}
+
+[node name="DeadPlayer" type="Node2D"]
+position = Vector2(0, 462)
+
+[node name="Sprite" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_ro7d3")
+frame_progress = 0.0457389
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_6vb7q")
+}
+autoplay = "death"

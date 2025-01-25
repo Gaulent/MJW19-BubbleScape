@@ -1,11 +1,20 @@
-[gd_scene load_steps=22 format=4 uid="uid://bjpu7nnp0ohhu"]
+[gd_scene load_steps=26 format=4 uid="uid://bjpu7nnp0ohhu"]
 
 [ext_resource type="Texture2D" uid="uid://cmff2yw881eua" path="res://assets/tiles/SPA_Rock_Grass_Water.png" id="1_b7tsn"]
 [ext_resource type="Texture2D" uid="uid://l41t3o2hk8c6" path="res://assets/Sonic_the_Hedgehog_-_Labyrinth_Zone_Act_1.png" id="1_hm2gc"]
 [ext_resource type="Script" path="res://scripts/player.gd" id="2_48rla"]
 [ext_resource type="Texture2D" uid="uid://jdgl8lm7wwqs" path="res://assets/player/SPA_Player_Ginger.png" id="2_p75jg"]
 [ext_resource type="Script" path="res://scripts/lung_label.gd" id="4_obu7r"]
+[ext_resource type="Shader" path="res://scenes/vignette.gdshader" id="5_58agx"]
+[ext_resource type="PackedScene" uid="uid://bs6j4j8rhw0we" path="res://scenes/dead_player.tscn" id="6_by7fh"]
 [ext_resource type="PackedScene" uid="uid://60p4bprhkomn" path="res://scenes/bubble_spawn_point.tscn" id="7_ru8vf"]
+[ext_resource type="AudioStream" uid="uid://cbtksf8prlwar" path="res://assets/player/517759__danlucaz__game-fx-2.mp3" id="7_vkwmo"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_w53rh"]
+shader = ExtResource("5_58agx")
+shader_parameter/outerRadius = 1.0
+shader_parameter/MainAlpha = 1.0
+shader_parameter/intensity = 0.0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wqwco"]
 texture = ExtResource("1_b7tsn")
@@ -364,6 +373,23 @@ animations = [{
 
 [node name="MainGame" type="Node2D"]
 
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(41, 208)
+zoom = Vector2(2.5, 2.5)
+position_smoothing_enabled = true
+drag_horizontal_enabled = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="Camera2D"]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="Camera2D/CanvasLayer"]
+material = SubResource("ShaderMaterial_w53rh")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
 [node name="SonicTheHedgehog-LabyrinthZoneAct1" type="Sprite2D" parent="."]
 visible = false
 position = Vector2(1028, 784)
@@ -378,11 +404,7 @@ position = Vector2(41, 208)
 collision_layer = 3
 collision_mask = 3
 script = ExtResource("2_48rla")
-
-[node name="Camera2D" type="Camera2D" parent="Player"]
-zoom = Vector2(2.5, 2.5)
-position_smoothing_enabled = true
-drag_horizontal_enabled = true
+dead_player_scene = ExtResource("6_by7fh")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
 position = Vector2(0, 1)
@@ -395,13 +417,23 @@ autoplay = "default"
 frame_progress = 0.0457389
 
 [node name="LungTimer" type="Timer" parent="Player"]
-wait_time = 30.0
+wait_time = 5.0
 autostart = true
 
-[node name="Lung Label" type="Label" parent="Player"]
+[node name="Lung Label" type="Label" parent="Player" node_paths=PackedStringArray("shader")]
 offset_left = 13.0
 offset_top = -27.0
 offset_right = 36.0
 offset_bottom = -4.0
 text = "5"
 script = ExtResource("4_obu7r")
+shader = NodePath("../../Camera2D/CanvasLayer/ColorRect")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Player/Lung Label"]
+stream = ExtResource("7_vkwmo")
+
+[node name="Timer" type="Timer" parent="Player/Lung Label"]
+wait_time = 0.5
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="Player"]
+remote_path = NodePath("../../Camera2D")

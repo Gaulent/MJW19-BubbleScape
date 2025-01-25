@@ -6,6 +6,7 @@ extends CharacterBody2D
 @export var inertia:float = 20.0
 @onready var lung_timer:Timer = $LungTimer
 @onready var sprite:AnimatedSprite2D = $AnimatedSprite2D
+@export var dead_player_scene:PackedScene
 
 func _ready() -> void:
 	lung_timer.timeout.connect(die)
@@ -38,7 +39,10 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 
 func die():
-	print("MUERTOMATAO")
+	var dead_player:Node2D = dead_player_scene.instantiate()
+	dead_player.global_position = global_position
+	owner.add_child(dead_player)
+	queue_free()
 
 func breathe():
 	velocity.y *= 0.2
