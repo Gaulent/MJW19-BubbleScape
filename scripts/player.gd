@@ -12,6 +12,8 @@ extends CharacterBody2D
 
 func _ready() -> void:
 	lung_timer.timeout.connect(die)
+	if LevelManagerSingleton.checkpoint_position:
+		global_position = LevelManagerSingleton.checkpoint_position
 
 func _physics_process(delta: float) -> void:
 	if sprite.animation == "breathe":

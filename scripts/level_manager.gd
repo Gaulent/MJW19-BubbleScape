@@ -8,6 +8,8 @@ extends Node
 
 var on_the_ending = false
 var good_ending:=false
+var checkpoint_position = null
+
 
 func _ready() -> void:
 	animator.play("fade_in")
@@ -21,8 +23,14 @@ func start_game():
 func main_game():
 	animator.play("fade_out")
 	await animator.animation_finished
+	on_the_ending = false
+	checkpoint_position = null
 	get_tree().change_scene_to_packed(main_scene)
 	animator.play("fade_in")
+
+func set_checkpoint(new_pos:Vector2):
+	checkpoint_position = new_pos
+	print("new_checkpoint")
 
 # Called when the node enters the scene tree for the first time.
 func reset_level():

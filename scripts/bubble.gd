@@ -18,4 +18,5 @@ func _physics_process(delta: float) -> void:
 	
 func pop(body: Node2D):
 	body.breathe()
+	LevelManagerSingleton.set_checkpoint(body.global_position)
 	queue_free()
