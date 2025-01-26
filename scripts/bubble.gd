@@ -17,8 +17,6 @@ func _physics_process(delta: float) -> void:
 	position.y -= speed * delta
 	
 func pop(body: CharacterBody2D):
-	if body.is_on_floor():
-		return
 	body.breathe()
 	LevelManagerSingleton.set_checkpoint(body.global_position)
 	queue_free()

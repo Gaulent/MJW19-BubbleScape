@@ -559,7 +559,7 @@ script = ExtResource("16_r3jll")
 shape = SubResource("RectangleShape2D_xo4g8")
 
 [node name="FinalSpawnPoint" type="Node2D" parent="."]
-position = Vector2(3618, -200)
+position = Vector2(3660, -200)
 script = ExtResource("17_sj6bw")
 bubble_scene = ExtResource("18_fqpac")
 small_bubble_scene = ExtResource("19_dk6sk")
@@ -583,7 +583,7 @@ visible_characters = 0
 visible_ratio = 0.0
 
 [node name="Wilson" type="Node2D" parent="FinalSpawnPoint"]
-position = Vector2(-140, -5)
+position = Vector2(-176, -5)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="FinalSpawnPoint/Wilson"]
 sprite_frames = SubResource("SpriteFrames_rsak5")
