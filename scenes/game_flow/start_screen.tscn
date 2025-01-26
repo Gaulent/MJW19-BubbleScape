@@ -1,9 +1,78 @@
-[gd_scene load_steps=5 format=3 uid="uid://6n8e0xy1851o"]
+[gd_scene load_steps=18 format=3 uid="uid://6n8e0xy1851o"]
 
-[ext_resource type="FontFile" uid="uid://06ypoyhykp7r" path="res://assets/Font/Montserrat-ExtraBold.ttf" id="1_axfcf"]
 [ext_resource type="Script" path="res://scripts/start_screen.gd" id="1_qj17j"]
 [ext_resource type="Texture2D" uid="uid://cdg2anbq0e41a" path="res://assets/boton inicio.png" id="2_8u5g0"]
+[ext_resource type="Texture2D" uid="uid://c8pxkew613xuk" path="res://assets/fondo_juego_version_grande_copia.png" id="2_hx1tc"]
 [ext_resource type="Script" path="res://scripts/animated_button.gd" id="3_72o0a"]
+[ext_resource type="Texture2D" uid="uid://dg7fu581ifbk3" path="res://assets/fondo_barco_naufragado_copia.png" id="3_p7fxc"]
+[ext_resource type="FontFile" uid="uid://bnjoqs7lgmby" path="res://assets/Font/Lovelo Line Bold.otf" id="4_o6glt"]
+[ext_resource type="Texture2D" uid="uid://yqlxglgpyd12" path="res://assets/objects/burbuja.png" id="7_64tvo"]
+[ext_resource type="Texture2D" uid="uid://b85v4ysmvhbmr" path="res://assets/objects/burbujeo.png" id="8_ot2f3"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tygb5"]
+atlas = ExtResource("7_64tvo")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_evd01"]
+atlas = ExtResource("7_64tvo")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6n4ux"]
+atlas = ExtResource("7_64tvo")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ua2d6"]
+atlas = ExtResource("7_64tvo")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_p6sby"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tygb5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_evd01")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6n4ux")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ua2d6")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dbwnd"]
+atlas = ExtResource("8_ot2f3")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7fx6w"]
+atlas = ExtResource("8_ot2f3")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r7sj8"]
+atlas = ExtResource("8_ot2f3")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3err3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dbwnd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7fx6w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r7sj8")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="StartScreen" type="Control"]
 layout_mode = 3
@@ -14,18 +83,32 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_qj17j")
 
-[node name="Button" type="Button" parent="."]
-layout_mode = 0
-offset_right = 8.0
-offset_bottom = 8.0
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_hx1tc")
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_p7fxc")
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 0
-offset_left = 81.0
-offset_top = 144.0
-offset_right = 1355.0
-offset_bottom = 329.0
-theme_override_fonts/font = ExtResource("1_axfcf")
+offset_left = 75.0
+offset_top = 178.0
+offset_right = 1349.0
+offset_bottom = 330.0
+theme_override_colors/font_color = Color(0.141176, 0.843137, 0.72549, 1)
+theme_override_fonts/font = ExtResource("4_o6glt")
 theme_override_font_sizes/font_size = 151
 text = "Bubble Escape"
 
@@ -36,10 +119,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -329.0
-offset_top = 52.0
-offset_right = 323.0
-offset_bottom = 378.0
+offset_left = 54.0
+offset_top = 198.0
+offset_right = 568.0
+offset_bottom = 471.0
 grow_horizontal = 2
 grow_vertical = 2
 pivot_offset = Vector2(326, 163)
@@ -47,3 +130,34 @@ texture_normal = ExtResource("2_8u5g0")
 ignore_texture_size = true
 stretch_mode = 4
 script = ExtResource("3_72o0a")
+
+[node name="Node2D" type="Node2D" parent="."]
+texture_filter = 1
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Node2D"]
+position = Vector2(1630, 799)
+scale = Vector2(7.89, 7.89)
+sprite_frames = SubResource("SpriteFrames_p6sby")
+autoplay = "default"
+frame_progress = 0.180471
+
+[node name="AnimatedSprite2D4" type="AnimatedSprite2D" parent="Node2D"]
+position = Vector2(1805, 611)
+scale = Vector2(5.91, 5.91)
+sprite_frames = SubResource("SpriteFrames_p6sby")
+autoplay = "default"
+frame_progress = 0.598263
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="Node2D"]
+position = Vector2(173, 103)
+scale = Vector2(5.66, 5.66)
+sprite_frames = SubResource("SpriteFrames_3err3")
+autoplay = "default"
+frame_progress = 0.647426
+
+[node name="AnimatedSprite2D3" type="AnimatedSprite2D" parent="Node2D"]
+position = Vector2(1730, 995)
+scale = Vector2(5.66, 5.66)
+sprite_frames = SubResource("SpriteFrames_3err3")
+autoplay = "default"
+frame_progress = 0.895435

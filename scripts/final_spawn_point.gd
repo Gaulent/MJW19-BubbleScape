@@ -21,7 +21,7 @@ func start_end_sequence(body:Node2D) -> void:
 	dialogbox.visible = true
 	var tween:= create_tween()
 	tween.tween_property(dialogtext, "visible_ratio", 1, 2).set_trans(Tween.TRANS_SINE)
-	await get_tree().create_timer(3.0).timeout
+	await get_tree().create_timer(3.5).timeout
 	shape_area.disabled = true
 	var current_bubble:Node2D = bubble_scene.instantiate()
 	
