@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://c2bo76ipdk15g"]
+[gd_scene load_steps=7 format=3 uid="uid://c2bo76ipdk15g"]
 
 [ext_resource type="Script" path="res://scripts/ending_scene.gd" id="1_86k0o"]
-[ext_resource type="Texture2D" uid="uid://c204kgetb7mke" path="res://assets/fondo_mar_atardecer_copia.png" id="2_8amsr"]
+[ext_resource type="Texture2D" uid="uid://bf0bdnpyocpwg" path="res://assets/final_malo.png" id="2_b0r1w"]
+[ext_resource type="Texture2D" uid="uid://duujiiacosvyr" path="res://assets/final_bueno.png" id="3_mxgd8"]
 [ext_resource type="Texture2D" uid="uid://bb5yrbgib08n0" path="res://assets/boton empezar de nuevo.png" id="4_b0dml"]
 [ext_resource type="AudioStream" uid="uid://si4qp5ikvfu2" path="res://assets/sounds/ambient_sea.wav" id="4_t6f51"]
 [ext_resource type="Script" path="res://scripts/animated_button.gd" id="5_s4fy1"]
@@ -13,7 +14,13 @@ script = ExtResource("1_86k0o")
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(970, 549)
 scale = Vector2(2.1, 2.1)
-texture = ExtResource("2_8amsr")
+texture = ExtResource("2_b0r1w")
+
+[node name="FinalBueno" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(970, 549)
+scale = Vector2(2.1, 2.1)
+texture = ExtResource("3_mxgd8")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_t6f51")
