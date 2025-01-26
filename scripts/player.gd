@@ -8,11 +8,14 @@ extends CharacterBody2D
 @onready var lung_timer:Timer = $LungTimer
 @onready var sprite:AnimatedSprite2D = $AnimatedSprite2D
 @export var dead_player_scene:PackedScene
+@onready var breathe_audio:AudioStreamPlayer = $BreatheAudio
 
 func _ready() -> void:
 	lung_timer.timeout.connect(die)
 
 func _physics_process(delta: float) -> void:
+	if sprite.animation == "breathe":
+		return
 	# Add the gravity.
 	if not is_on_floor():
 		velocity += get_gravity() * delta
@@ -58,3 +61,7 @@ func die():
 func breathe():
 	velocity.y *= 0.2
 	lung_timer.start()
+	sprite.animation = "breathe"
+	breathe_audio.play()
+	await get_tree().create_timer(0.2).timeout
+	sprite.animation = "idle"

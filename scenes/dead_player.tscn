@@ -1,17 +1,13 @@
-[gd_scene load_steps=8 format=3 uid="uid://bs6j4j8rhw0we"]
+[gd_scene load_steps=7 format=3 uid="uid://bs6j4j8rhw0we"]
 
 [ext_resource type="Script" path="res://scripts/dead_player.gd" id="1_51vx4"]
-[ext_resource type="Texture2D" uid="uid://b6tfvo1t4ptmg" path="res://assets/player/naufrago_v2_caminando.png" id="2_f0x7r"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ym6s3"]
-atlas = ExtResource("2_f0x7r")
-region = Rect2(0, 0, 32, 32)
+[ext_resource type="Texture2D" uid="uid://bqx4kwcvf1s1y" path="res://assets/player/Personaje_respirando.png" id="2_5lcag"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ro7d3"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_ym6s3")
+"texture": ExtResource("2_5lcag")
 }],
 "loop": true,
 "name": &"default",
