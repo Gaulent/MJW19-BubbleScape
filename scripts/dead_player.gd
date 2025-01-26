@@ -9,4 +9,4 @@ func _ready() -> void:
 	if not LevelManagerSingleton.on_the_ending:
 		LevelManagerSingleton.reset_level()
 	else:
-		LevelManagerSingleton.final_bueno()
+		LevelManagerSingleton.ending_level(true)

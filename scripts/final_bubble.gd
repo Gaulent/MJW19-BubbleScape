@@ -18,5 +18,5 @@ func _physics_process(delta: float) -> void:
 	
 func pop(body: Node2D):
 	body.breathe()
-	LevelManagerSingleton.final_malo()
+	LevelManagerSingleton.ending_level(false)
 	queue_free()

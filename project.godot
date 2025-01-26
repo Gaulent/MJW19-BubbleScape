@@ -28,6 +28,8 @@ directories/dch_directory={
 }
 directories/dtl_directory={
 "debug_dialog": "res://timeline/debug_dialog.dtl",
+"end_dialog_bad": "res://timeline/end_dialog_bad.dtl",
+"end_dialog_good": "res://timeline/end_dialog_good.dtl",
 "opening_dialog": "res://timeline/opening_dialog.dtl"
 }
 glossary/default_case_sensitive=true
