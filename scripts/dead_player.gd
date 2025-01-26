@@ -6,4 +6,7 @@ extends Node2D
 func _ready() -> void:
 	animator.play("death")
 	await animator.animation_finished
-	LevelManagerSingleton.reset_level()
+	if not LevelManagerSingleton.on_the_ending:
+		LevelManagerSingleton.reset_level()
+	else:
+		LevelManagerSingleton.final_bueno()

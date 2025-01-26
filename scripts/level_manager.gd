@@ -5,6 +5,7 @@ extends Node
 @export var main_scene:PackedScene
 @export var opening_scene:PackedScene
 
+var on_the_ending = false
 
 func _ready() -> void:
 	animator.play("fade_in")
@@ -27,3 +28,12 @@ func reset_level():
 	await animator.animation_finished
 	get_tree().reload_current_scene()
 	animator.play("fade_in")
+
+	
+func final_malo():
+	print("FINAL MALO")
+
+
+func final_bueno():
+	print("FINAL BUENO")
+	

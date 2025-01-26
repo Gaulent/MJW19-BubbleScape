@@ -1,7 +1,14 @@
 [wait time="2.0"]
-[Sonido del motor del barco y olas suaves de fondo. El sol brilla en el horizonte.]
+[sound path="res://assets/sounds/distant_horn.wav" volume="0.0"]
 character_companion: No puedo creer que esté pasando… ¡Dejar todo atrás y empezar de nuevo! Es como un sueño, ¿no crees?
 character_player: Sí, supongo que todos necesitamos un nuevo comienzo de vez en cuando. ¿Y tú? ¿Qué te trajo aquí?
 character_companion: Ah, bueno… la vida. Digamos que no me quedaba mucho por perder. Pero este trabajo en la expedición… es más de lo que podría haber imaginado. ¿Sabías que siempre quise trabajar en el mar?
 character_player: ¿En serio? ¿Desde cuándo?
 character_companion: Desde niño. Mi padre solía llevarme a pescar en un bote pequeño, y yo siempre decía que algún día tendría mi propio barco… Bueno, no es mío, pero es lo más cerca que he estado. [wave amp=50.0 freq=5.0 connected=1]Jajajajaja[/wave]
+character_player: Suena increíble. Yo… simplemente quería algo diferente. Una aventura, supongo. Es extraño, apenas nos conocemos, pero siento que este viaje ya está cambiando algo en mí.
+character_companion: A veces, conocer a la persona adecuada en el momento adecuado lo cambia todo, ¿no? Quizás sea este el comienzo de algo grande.
+[wait time="2.0"]
+character_player: No, tiene sentido. Es un pensamiento… reconfortante. Como si nunca estuviéramos realmente solos.
+[wait time="1.0"]
+character_companion: ¿Qué fue eso?
+character_player: ¡Agárrate a algo!
