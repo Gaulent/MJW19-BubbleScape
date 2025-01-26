@@ -1,36 +1,36 @@
 [gd_scene load_steps=47 format=4 uid="uid://bjpu7nnp0ohhu"]
 
-[ext_resource type="Texture2D" uid="uid://cmff2yw881eua" path="res://assets/tiles/SPA_Rock_Grass_Water.png" id="1_b7tsn"]
-[ext_resource type="Texture2D" uid="uid://l41t3o2hk8c6" path="res://assets/Sonic_the_Hedgehog_-_Labyrinth_Zone_Act_1.png" id="1_hm2gc"]
-[ext_resource type="Texture2D" uid="uid://c8pxkew613xuk" path="res://assets/fondo_juego_version_grande_copia.png" id="1_vkprv"]
-[ext_resource type="Script" path="res://scripts/player.gd" id="2_48rla"]
-[ext_resource type="Script" path="res://scripts/lung_label.gd" id="4_obu7r"]
-[ext_resource type="Shader" path="res://scripts/vignette.gdshader" id="5_58agx"]
-[ext_resource type="PackedScene" uid="uid://bs6j4j8rhw0we" path="res://scenes/dead_player.tscn" id="6_by7fh"]
-[ext_resource type="PackedScene" uid="uid://60p4bprhkomn" path="res://scenes/bubble_spawn_point.tscn" id="7_ru8vf"]
-[ext_resource type="AudioStream" uid="uid://cbtksf8prlwar" path="res://assets/player/517759__danlucaz__game-fx-2.mp3" id="7_vkwmo"]
-[ext_resource type="Texture2D" uid="uid://bqx4kwcvf1s1y" path="res://assets/player/Personaje_respirando.png" id="8_ap8ig"]
-[ext_resource type="Texture2D" uid="uid://b6tfvo1t4ptmg" path="res://assets/player/naufrago_v2_caminando.png" id="8_chy3c"]
-[ext_resource type="Texture2D" uid="uid://dibs0v8jb8htr" path="res://assets/player/Personaje_quieto.png" id="8_v2jxc"]
-[ext_resource type="Texture2D" uid="uid://c7bcwp3byvdp5" path="res://assets/player/naufrago_v2_saltando_1.png" id="9_0hgri"]
-[ext_resource type="Script" path="res://scripts/shredder.gd" id="11_7buy8"]
-[ext_resource type="AudioStream" uid="uid://ck4u7qbs7j7m7" path="res://assets/sounds/breathe.wav" id="13_sjtda"]
-[ext_resource type="Texture2D" uid="uid://wwau8yynh6ro" path="res://assets/companion/personaje_2_desesperado.png" id="14_l4kuj"]
-[ext_resource type="Script" path="res://scripts/final_spawn_point.gd" id="14_ufqws"]
-[ext_resource type="PackedScene" uid="uid://c45xy36221ud2" path="res://scenes/final_bubble.tscn" id="15_pnaqd"]
-[ext_resource type="PackedScene" uid="uid://c7sm23wkyfm4c" path="res://scenes/small_bubble.tscn" id="16_tjr6i"]
-[ext_resource type="Texture2D" uid="uid://b85v4ysmvhbmr" path="res://assets/objects/burbujeo.png" id="17_q1b6h"]
-[ext_resource type="AudioStream" uid="uid://b046y8mppbpqo" path="res://assets/sounds/level_music.wav" id="21_7y8ff"]
-[ext_resource type="PackedScene" uid="uid://d2cxbtsgxg4us" path="res://scenes/spikes.tscn" id="22_n5wpd"]
+[ext_resource type="Texture2D" uid="uid://c8pxkew613xuk" path="res://assets/fondo_juego_version_grande_copia.png" id="1_cmqak"]
+[ext_resource type="Shader" path="res://scripts/vignette.gdshader" id="2_60iud"]
+[ext_resource type="Texture2D" uid="uid://l41t3o2hk8c6" path="res://assets/Sonic_the_Hedgehog_-_Labyrinth_Zone_Act_1.png" id="3_kopxt"]
+[ext_resource type="Texture2D" uid="uid://cmff2yw881eua" path="res://assets/tiles/SPA_Rock_Grass_Water.png" id="4_dpcdn"]
+[ext_resource type="PackedScene" uid="uid://d2cxbtsgxg4us" path="res://scenes/spikes.tscn" id="5_2jl6l"]
+[ext_resource type="PackedScene" uid="uid://60p4bprhkomn" path="res://scenes/bubble_spawn_point.tscn" id="6_47kt5"]
+[ext_resource type="Script" path="res://scripts/player.gd" id="7_mh1l7"]
+[ext_resource type="PackedScene" uid="uid://bs6j4j8rhw0we" path="res://scenes/dead_player.tscn" id="8_lstxx"]
+[ext_resource type="Texture2D" uid="uid://bqx4kwcvf1s1y" path="res://assets/player/Personaje_respirando.png" id="9_t0s65"]
+[ext_resource type="Texture2D" uid="uid://dibs0v8jb8htr" path="res://assets/player/Personaje_quieto.png" id="10_t6dvp"]
+[ext_resource type="Texture2D" uid="uid://c7bcwp3byvdp5" path="res://assets/player/naufrago_v2_saltando_1.png" id="11_bfej1"]
+[ext_resource type="Texture2D" uid="uid://b6tfvo1t4ptmg" path="res://assets/player/naufrago_v2_caminando.png" id="12_eerdh"]
+[ext_resource type="Script" path="res://scripts/lung_label.gd" id="13_v0m3x"]
+[ext_resource type="AudioStream" uid="uid://cbtksf8prlwar" path="res://assets/player/517759__danlucaz__game-fx-2.mp3" id="14_hw4yk"]
+[ext_resource type="AudioStream" uid="uid://ck4u7qbs7j7m7" path="res://assets/sounds/breathe.wav" id="15_1t5th"]
+[ext_resource type="Script" path="res://scripts/shredder.gd" id="16_r3jll"]
+[ext_resource type="Script" path="res://scripts/final_spawn_point.gd" id="17_sj6bw"]
+[ext_resource type="PackedScene" uid="uid://c45xy36221ud2" path="res://scenes/final_bubble.tscn" id="18_fqpac"]
+[ext_resource type="PackedScene" uid="uid://c7sm23wkyfm4c" path="res://scenes/small_bubble.tscn" id="19_dk6sk"]
+[ext_resource type="Texture2D" uid="uid://b85v4ysmvhbmr" path="res://assets/objects/burbujeo.png" id="20_u68tk"]
+[ext_resource type="Texture2D" uid="uid://wwau8yynh6ro" path="res://assets/companion/personaje_2_desesperado.png" id="21_11gtr"]
+[ext_resource type="AudioStream" uid="uid://b046y8mppbpqo" path="res://assets/sounds/level_music.wav" id="22_rv82s"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_w53rh"]
-shader = ExtResource("5_58agx")
+shader = ExtResource("2_60iud")
 shader_parameter/outerRadius = 1.0
 shader_parameter/MainAlpha = 1.0
 shader_parameter/intensity = 0.0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wqwco"]
-texture = ExtResource("1_b7tsn")
+texture = ExtResource("4_dpcdn")
 separation = Vector2i(6, 6)
 texture_region_size = Vector2i(32, 32)
 0:0/next_alternative_id = 2
@@ -294,8 +294,8 @@ texture_region_size = Vector2i(32, 32)
 4:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, 1, 16, -16, 16, 16, -16, 16)
 
 [sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_6soff"]
-scenes/1/scene = ExtResource("22_n5wpd")
-scenes/2/scene = ExtResource("7_ru8vf")
+scenes/1/scene = ExtResource("5_2jl6l")
+scenes/2/scene = ExtResource("6_47kt5")
 
 [sub_resource type="TileSet" id="TileSet_n7nxq"]
 tile_size = Vector2i(32, 32)
@@ -309,46 +309,46 @@ sources/2 = SubResource("TileSetScenesCollectionSource_6soff")
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_dm5o4"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_n2726"]
-atlas = ExtResource("8_v2jxc")
+atlas = ExtResource("10_t6dvp")
 region = Rect2(0, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8o8qo"]
-atlas = ExtResource("8_v2jxc")
+atlas = ExtResource("10_t6dvp")
 region = Rect2(32, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_foi4l"]
-atlas = ExtResource("8_v2jxc")
+atlas = ExtResource("10_t6dvp")
 region = Rect2(0, 32, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_wrh5g"]
-atlas = ExtResource("8_chy3c")
+atlas = ExtResource("12_eerdh")
 region = Rect2(0, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5va3j"]
-atlas = ExtResource("8_chy3c")
+atlas = ExtResource("12_eerdh")
 region = Rect2(32, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_n03nx"]
-atlas = ExtResource("8_chy3c")
+atlas = ExtResource("12_eerdh")
 region = Rect2(0, 32, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_20sp4"]
-atlas = ExtResource("8_chy3c")
+atlas = ExtResource("12_eerdh")
 region = Rect2(32, 32, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_re57m"]
-atlas = ExtResource("8_chy3c")
+atlas = ExtResource("12_eerdh")
 region = Rect2(0, 64, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_gmohh"]
-atlas = ExtResource("8_chy3c")
+atlas = ExtResource("12_eerdh")
 region = Rect2(32, 64, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ro7d3"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("8_ap8ig")
+"texture": ExtResource("9_t0s65")
 }],
 "loop": true,
 "name": &"breathe",
@@ -370,7 +370,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("9_0hgri")
+"texture": ExtResource("11_bfej1")
 }],
 "loop": true,
 "name": &"jump",
@@ -404,15 +404,15 @@ animations = [{
 size = Vector2(6097, 327)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ekbak"]
-atlas = ExtResource("17_q1b6h")
+atlas = ExtResource("20_u68tk")
 region = Rect2(0, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ujjf7"]
-atlas = ExtResource("17_q1b6h")
+atlas = ExtResource("20_u68tk")
 region = Rect2(32, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_526sc"]
-atlas = ExtResource("17_q1b6h")
+atlas = ExtResource("20_u68tk")
 region = Rect2(0, 32, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_tt7ne"]
@@ -436,11 +436,11 @@ animations = [{
 size = Vector2(203, 276)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rg7r4"]
-atlas = ExtResource("14_l4kuj")
+atlas = ExtResource("21_11gtr")
 region = Rect2(0, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_e2m7c"]
-atlas = ExtResource("14_l4kuj")
+atlas = ExtResource("21_11gtr")
 region = Rect2(0, 32, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_rsak5"]
@@ -467,7 +467,7 @@ scroll_scale = Vector2(0.87, 0.87)
 texture_filter = 1
 position = Vector2(1936, 808)
 scale = Vector2(2.3, 2.3)
-texture = ExtResource("1_vkprv")
+texture = ExtResource("1_cmqak")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(397, 328)
@@ -489,7 +489,7 @@ grow_vertical = 2
 [node name="SonicTheHedgehog-LabyrinthZoneAct1" type="Sprite2D" parent="."]
 visible = false
 position = Vector2(1028, 784)
-texture = ExtResource("1_hm2gc")
+texture = ExtResource("3_kopxt")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 texture_filter = 1
@@ -500,9 +500,9 @@ tile_set = SubResource("TileSet_n7nxq")
 position = Vector2(397, 328)
 collision_mask = 2
 floor_snap_length = 2.0
-script = ExtResource("2_48rla")
+script = ExtResource("7_mh1l7")
 JUMP_VELOCITY = -320.0
-dead_player_scene = ExtResource("6_by7fh")
+dead_player_scene = ExtResource("8_lstxx")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
 position = Vector2(0, 1.5)
@@ -525,11 +525,11 @@ offset_top = -27.0
 offset_right = 36.0
 offset_bottom = -4.0
 text = "5"
-script = ExtResource("4_obu7r")
+script = ExtResource("13_v0m3x")
 shader = NodePath("../../Camera2D/CanvasLayer/ColorRect")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Player/Lung Label"]
-stream = ExtResource("7_vkwmo")
+stream = ExtResource("14_hw4yk")
 
 [node name="Timer" type="Timer" parent="Player/Lung Label"]
 wait_time = 0.5
@@ -538,22 +538,22 @@ wait_time = 0.5
 remote_path = NodePath("../../Camera2D")
 
 [node name="BreatheAudio" type="AudioStreamPlayer" parent="Player"]
-stream = ExtResource("13_sjtda")
+stream = ExtResource("15_1t5th")
 
 [node name="Shredder" type="Area2D" parent="."]
 position = Vector2(2134, -1177)
 collision_layer = 0
 collision_mask = 12
-script = ExtResource("11_7buy8")
+script = ExtResource("16_r3jll")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Shredder"]
 shape = SubResource("RectangleShape2D_xo4g8")
 
 [node name="FinalSpawnPoint" type="Node2D" parent="."]
 position = Vector2(3618, -200)
-script = ExtResource("14_ufqws")
-bubble_scene = ExtResource("15_pnaqd")
-small_bubble_scene = ExtResource("16_tjr6i")
+script = ExtResource("17_sj6bw")
+bubble_scene = ExtResource("18_fqpac")
+small_bubble_scene = ExtResource("19_dk6sk")
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="FinalSpawnPoint"]
 texture_filter = 1
@@ -584,5 +584,5 @@ frame_progress = 0.0870149
 flip_h = true
 
 [node name="Music" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("21_7y8ff")
+stream = ExtResource("22_rv82s")
 autoplay = true

@@ -11,13 +11,13 @@ config_version=5
 [application]
 
 config/name="MGW19 Ultitled Bubble"
-run/main_scene="res://scenes/main_game.tscn"
+run/main_scene="res://scenes/game_flow/main_game.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://icon.svg"
 
 [autoload]
 
-LevelManagerSingleton="*res://scenes/level_manager.tscn"
+LevelManagerSingleton="*res://scenes/systems/level_manager.tscn"
 Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 
 [dialogic]
