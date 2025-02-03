@@ -1,21 +1,13 @@
-[gd_scene load_steps=49 format=4 uid="uid://bjpu7nnp0ohhu"]
+[gd_scene load_steps=30 format=4 uid="uid://bjpu7nnp0ohhu"]
 
 [ext_resource type="Texture2D" uid="uid://c8pxkew613xuk" path="res://assets/fondo_juego_version_grande_copia.png" id="1_cmqak"]
 [ext_resource type="Shader" path="res://scripts/vignette.gdshader" id="2_60iud"]
-[ext_resource type="Script" path="res://scenes/game_flow/post_processing.gd" id="2_gltut"]
+[ext_resource type="Script" path="res://scripts/post_processing.gd" id="2_gltut"]
 [ext_resource type="Texture2D" uid="uid://cmff2yw881eua" path="res://assets/tiles/SPA_Rock_Grass_Water.png" id="4_dpcdn"]
 [ext_resource type="PackedScene" uid="uid://d2cxbtsgxg4us" path="res://scenes/spikes.tscn" id="5_2jl6l"]
 [ext_resource type="PackedScene" uid="uid://60p4bprhkomn" path="res://scenes/bubble_spawn_point.tscn" id="6_47kt5"]
 [ext_resource type="PackedScene" uid="uid://iyyw26ncr0hu" path="res://scenes/rotated_spikes.tscn" id="7_emeoo"]
-[ext_resource type="Script" path="res://scripts/player.gd" id="7_mh1l7"]
-[ext_resource type="PackedScene" uid="uid://bs6j4j8rhw0we" path="res://scenes/dead_player.tscn" id="8_lstxx"]
-[ext_resource type="Texture2D" uid="uid://bqx4kwcvf1s1y" path="res://assets/player/Personaje_respirando.png" id="9_t0s65"]
-[ext_resource type="Texture2D" uid="uid://dibs0v8jb8htr" path="res://assets/player/Personaje_quieto.png" id="10_t6dvp"]
-[ext_resource type="Texture2D" uid="uid://c7bcwp3byvdp5" path="res://assets/player/naufrago_v2_saltando_1.png" id="11_bfej1"]
-[ext_resource type="Texture2D" uid="uid://b6tfvo1t4ptmg" path="res://assets/player/naufrago_v2_caminando.png" id="12_eerdh"]
-[ext_resource type="Script" path="res://scripts/lung_label.gd" id="13_v0m3x"]
-[ext_resource type="AudioStream" uid="uid://cbtksf8prlwar" path="res://assets/player/517759__danlucaz__game-fx-2.mp3" id="14_hw4yk"]
-[ext_resource type="AudioStream" uid="uid://ck4u7qbs7j7m7" path="res://assets/sounds/breathe.wav" id="15_1t5th"]
+[ext_resource type="PackedScene" uid="uid://bg3yomjui84by" path="res://scenes/player.tscn" id="15_2tnh7"]
 [ext_resource type="Script" path="res://scripts/shredder.gd" id="16_r3jll"]
 [ext_resource type="Script" path="res://scripts/final_spawn_point.gd" id="17_sj6bw"]
 [ext_resource type="PackedScene" uid="uid://c45xy36221ud2" path="res://scenes/final_bubble.tscn" id="18_fqpac"]
@@ -379,100 +371,6 @@ shader_parameter/outerRadius = 1.0
 shader_parameter/MainAlpha = 1.0
 shader_parameter/intensity = 0.0
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_dm5o4"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_n2726"]
-atlas = ExtResource("10_t6dvp")
-region = Rect2(0, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_8o8qo"]
-atlas = ExtResource("10_t6dvp")
-region = Rect2(32, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_foi4l"]
-atlas = ExtResource("10_t6dvp")
-region = Rect2(0, 32, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_wrh5g"]
-atlas = ExtResource("12_eerdh")
-region = Rect2(0, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_5va3j"]
-atlas = ExtResource("12_eerdh")
-region = Rect2(32, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_n03nx"]
-atlas = ExtResource("12_eerdh")
-region = Rect2(0, 32, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_20sp4"]
-atlas = ExtResource("12_eerdh")
-region = Rect2(32, 32, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_re57m"]
-atlas = ExtResource("12_eerdh")
-region = Rect2(0, 64, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_gmohh"]
-atlas = ExtResource("12_eerdh")
-region = Rect2(32, 64, 32, 32)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_ro7d3"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("9_t0s65")
-}],
-"loop": true,
-"name": &"breathe",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_n2726")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_8o8qo")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_foi4l")
-}],
-"loop": true,
-"name": &"idle",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("11_bfej1")
-}],
-"loop": true,
-"name": &"jump",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_wrh5g")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_5va3j")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_n03nx")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_20sp4")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_re57m")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_gmohh")
-}],
-"loop": true,
-"name": &"walk",
-"speed": 8.0
-}]
-
 [node name="MainGame" type="Node2D"]
 texture_filter = 1
 
@@ -555,7 +453,7 @@ tile_map_data = PackedByteArray("AAAXAAUAAQABAAIAAAAXAAQAAQACAAIAAAAXAAMAAQABAAI
 tile_set = SubResource("TileSet_n7nxq")
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(34, -387)
+position = Vector2(310, -533)
 zoom = Vector2(3, 3)
 process_callback = 0
 position_smoothing_enabled = true
@@ -573,49 +471,11 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Player" type="CharacterBody2D" parent="." groups=["Player"]]
-position = Vector2(34, -387)
-collision_mask = 2
-floor_snap_length = 2.0
-script = ExtResource("7_mh1l7")
-JUMP_VELOCITY = -320.0
-dead_player_scene = ExtResource("8_lstxx")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
-position = Vector2(0, 1.5)
-shape = SubResource("CapsuleShape2D_dm5o4")
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Player"]
-texture_filter = 1
-position = Vector2(4.76837e-07, 1)
-sprite_frames = SubResource("SpriteFrames_ro7d3")
-animation = &"breathe"
-autoplay = "idle"
-
-[node name="LungTimer" type="Timer" parent="Player"]
-wait_time = 25.0
-autostart = true
-
-[node name="Lung Label" type="Label" parent="Player" node_paths=PackedStringArray("shader")]
-offset_left = 13.0
-offset_top = -27.0
-offset_right = 36.0
-offset_bottom = -4.0
-text = "5"
-script = ExtResource("13_v0m3x")
-shader = NodePath("../../Camera2D/PostProcessing/ColorRect")
-
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Player/Lung Label"]
-stream = ExtResource("14_hw4yk")
-
-[node name="Timer" type="Timer" parent="Player/Lung Label"]
-wait_time = 0.5
+[node name="Player" parent="." instance=ExtResource("15_2tnh7")]
+position = Vector2(310, -533)
 
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="Player"]
 remote_path = NodePath("../../Camera2D")
-
-[node name="BreatheAudio" type="AudioStreamPlayer" parent="Player"]
-stream = ExtResource("15_1t5th")
 
 [node name="MusicPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("22_rv82s")

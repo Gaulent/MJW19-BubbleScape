@@ -16,7 +16,7 @@ func _ready() -> void:
 func _physics_process(delta: float) -> void:
 	position.y -= speed * delta
 	
-func pop(body: CharacterBody2D):
-	body.breathe()
+func pop(body: Player):
+	body.fsm.transition_to("Breathe")
 	LevelManagerSingleton.set_checkpoint(body.global_position)
 	queue_free()
