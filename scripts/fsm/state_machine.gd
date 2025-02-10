@@ -1,17 +1,9 @@
 extends Node
 class_name StateMachine
 
-#############################################
-# State machine as set up in my video on FSMs
-# https://www.youtube.com/watch?v=ow_Lum-Agbs
-# Code is clearer here though, better names
-#############################################
-
 @export var initial_state : State
 
 var current_state : State
-var states : Dictionary = {}
-
 
 func _ready():
 
@@ -22,6 +14,7 @@ func _ready():
 	for child in get_children():
 		if child is State:
 			child.fsm = self
+			child.exit()
 
 	if initial_state:
 		current_state = initial_state
@@ -37,7 +30,7 @@ func _physics_process(delta):
 
 
 func transition_to(new_state_name: NodePath):
-	var new_state = get_node_or_null(new_state_name)
+	var new_state:State = get_node_or_null(new_state_name)
 	if !new_state:
 		push_error("FSM: Trying to transition to non existing state: " + str(new_state_name))
 
@@ -49,5 +42,3 @@ func transition_to(new_state_name: NodePath):
 	new_state.enter()
 	current_state = new_state
 	
-	
-

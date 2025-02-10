@@ -1,9 +1,11 @@
 extends CharacterBody2D
 class_name Player
 
+@export var speed:float = 150.0
+@export var jump_velocity:float = -320
+@export var inertia:float = 20.0
+
 @onready var lung_timer:Timer = $LungTimer
-@onready var sprite:AnimatedSprite2D = $AnimatedSprite2D
-@export var dead_player_scene:PackedScene
 @onready var fsm:StateMachine = $PlayerStateMachine
 
 func _ready() -> void:
@@ -11,10 +13,14 @@ func _ready() -> void:
 	if LevelManagerSingleton.checkpoint_position:
 		global_position = LevelManagerSingleton.checkpoint_position
 
-
-
 func die():
-	var dead_player:Node2D = dead_player_scene.instantiate()
-	dead_player.global_position = global_position
-	owner.add_child(dead_player)
-	queue_free()
+	fsm.transition_to("Dead")
+
+func handle_horizontal_movement():
+	var direction := Input.get_axis("move_left", "move_right")
+	if direction:
+		velocity.x = move_toward(velocity.x, direction * speed, 2*speed/inertia)
+	else:
+		velocity.x = move_toward(velocity.x, 0, speed/inertia)
+
+		

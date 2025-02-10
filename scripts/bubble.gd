@@ -9,14 +9,8 @@ func _ready() -> void:
 	var tween:= create_tween().set_loops()
 	tween.tween_property(self, "position:x", end, 1).from(start).set_trans(Tween.TRANS_SINE)
 	tween.tween_property(self, "position:x", start, 1).from(end).set_trans(Tween.TRANS_SINE)
-	body_entered.connect(pop)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _physics_process(delta: float) -> void:
+func _process(delta: float) -> void:
 	position.y -= speed * delta
-	
-func pop(body: Player):
-	body.fsm.transition_to("Breathe")
-	LevelManagerSingleton.set_checkpoint(body.global_position)
-	queue_free()

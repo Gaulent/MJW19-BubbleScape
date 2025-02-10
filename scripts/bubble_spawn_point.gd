@@ -11,13 +11,6 @@ func _ready() -> void:
 	small_bubble_timer.timeout.connect(spawn_small_bubble)
 	
 
-	
-
-
-
-
-
-
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func spawn_bubble() -> void:
 	var current_bubble:Node2D = bubble_scene.instantiate()

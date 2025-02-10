@@ -1,6 +1,7 @@
 extends TextureButton
 
 func _ready() -> void:
+	# Para capturar el mando
 	grab_focus()
 	visibility_changed.connect(grab_focus)
 

@@ -14,6 +14,8 @@ func _process(delta: float) -> void:
 
 	if fsm.current_state.name == "Breathe":
 		animation = "breathe"
+	elif fsm.current_state.name == "Dead":
+		animation = "breathe"
 	elif not owner.is_on_floor():
 		animation = "jump"
 	elif abs(owner.velocity.x) > 0:

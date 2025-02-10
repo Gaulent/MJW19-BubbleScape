@@ -453,7 +453,7 @@ tile_map_data = PackedByteArray("AAAXAAUAAQABAAIAAAAXAAQAAQACAAIAAAAXAAMAAQABAAI
 tile_set = SubResource("TileSet_n7nxq")
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(310, -533)
+position = Vector2(86, 187)
 zoom = Vector2(3, 3)
 process_callback = 0
 position_smoothing_enabled = true
@@ -472,7 +472,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Player" parent="." instance=ExtResource("15_2tnh7")]
-position = Vector2(310, -533)
+position = Vector2(86, 187)
 
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="Player"]
 remote_path = NodePath("../../Camera2D")
