@@ -1,0 +1,187 @@
+[gd_scene load_steps=27 format=3 uid="uid://bg3yomjui84by"]
+
+[ext_resource type="Script" path="res://entities/player/player.gd" id="1_48d0n"]
+[ext_resource type="Texture2D" uid="uid://bqx4kwcvf1s1y" path="res://entities/player/assets/Personaje_respirando.png" id="2_1djnb"]
+[ext_resource type="Texture2D" uid="uid://dibs0v8jb8htr" path="res://entities/player/assets/Personaje_quieto.png" id="3_3oybt"]
+[ext_resource type="Texture2D" uid="uid://c7bcwp3byvdp5" path="res://entities/player/assets/naufrago_v2_saltando_1.png" id="4_nus4h"]
+[ext_resource type="Texture2D" uid="uid://b6tfvo1t4ptmg" path="res://entities/player/assets/naufrago_v2_caminando.png" id="5_oq5tq"]
+[ext_resource type="Script" path="res://entities/player/components/player_animation.gd" id="6_dpfwu"]
+[ext_resource type="Script" path="res://entities/player/components/lung_label.gd" id="7_i348h"]
+[ext_resource type="AudioStream" uid="uid://cbtksf8prlwar" path="res://entities/player/assets/517759__danlucaz__game-fx-2.mp3" id="8_oto10"]
+[ext_resource type="Script" path="res://globals/fsm/state_machine.gd" id="9_f0em0"]
+[ext_resource type="Script" path="res://entities/player/states/player_walk.gd" id="10_etm15"]
+[ext_resource type="Script" path="res://entities/player/states/player_jump.gd" id="11_kxyhv"]
+[ext_resource type="Script" path="res://entities/player/states/player_breathe.gd" id="12_pn1ga"]
+[ext_resource type="AudioStream" uid="uid://ck4u7qbs7j7m7" path="res://entities/player/breathe.wav" id="13_u3b0j"]
+[ext_resource type="Script" path="res://entities/player/states/player_dead.gd" id="14_li08p"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_dm5o4"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n2726"]
+atlas = ExtResource("3_3oybt")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8o8qo"]
+atlas = ExtResource("3_3oybt")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_foi4l"]
+atlas = ExtResource("3_3oybt")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wrh5g"]
+atlas = ExtResource("5_oq5tq")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5va3j"]
+atlas = ExtResource("5_oq5tq")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n03nx"]
+atlas = ExtResource("5_oq5tq")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_20sp4"]
+atlas = ExtResource("5_oq5tq")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_re57m"]
+atlas = ExtResource("5_oq5tq")
+region = Rect2(0, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gmohh"]
+atlas = ExtResource("5_oq5tq")
+region = Rect2(32, 64, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ro7d3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_1djnb")
+}],
+"loop": true,
+"name": &"breathe",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n2726")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8o8qo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_foi4l")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_nus4h")
+}],
+"loop": true,
+"name": &"jump",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wrh5g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5va3j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n03nx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_20sp4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_re57m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gmohh")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 8.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_2gkdd"]
+radius = 9.05539
+
+[node name="Player" type="CharacterBody2D" groups=["Player"]]
+collision_mask = 2
+floor_snap_length = 2.0
+script = ExtResource("1_48d0n")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(3, 3)
+process_callback = 0
+position_smoothing_enabled = true
+drag_horizontal_enabled = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 1.5)
+shape = SubResource("CapsuleShape2D_dm5o4")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+unique_name_in_owner = true
+texture_filter = 1
+position = Vector2(4.76837e-07, 1)
+sprite_frames = SubResource("SpriteFrames_ro7d3")
+animation = &"idle"
+autoplay = "idle"
+script = ExtResource("6_dpfwu")
+
+[node name="BubbleDetector" type="Area2D" parent="."]
+position = Vector2(0, -1)
+collision_layer = 0
+collision_mask = 4
+
+[node name="BubbleDetectorShape" type="CollisionShape2D" parent="BubbleDetector"]
+shape = SubResource("CircleShape2D_2gkdd")
+
+[node name="LungTimer" type="Timer" parent="."]
+unique_name_in_owner = true
+wait_time = 25.0
+autostart = true
+
+[node name="CoyoteTimer" type="Timer" parent="."]
+wait_time = 0.1
+one_shot = true
+
+[node name="Lung Label" type="Label" parent="."]
+offset_left = 13.0
+offset_top = -27.0
+offset_right = 36.0
+offset_bottom = -4.0
+text = "5"
+script = ExtResource("7_i348h")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Lung Label"]
+stream = ExtResource("8_oto10")
+
+[node name="Timer" type="Timer" parent="Lung Label"]
+wait_time = 0.5
+
+[node name="PlayerStateMachine" type="Node" parent="." node_paths=PackedStringArray("initial_state")]
+script = ExtResource("9_f0em0")
+initial_state = NodePath("Walk")
+
+[node name="Walk" type="Node" parent="PlayerStateMachine"]
+script = ExtResource("10_etm15")
+
+[node name="Jump" type="Node" parent="PlayerStateMachine"]
+script = ExtResource("11_kxyhv")
+
+[node name="Breathe" type="Node" parent="PlayerStateMachine"]
+script = ExtResource("12_pn1ga")
+
+[node name="BreatheAudio" type="AudioStreamPlayer" parent="PlayerStateMachine/Breathe"]
+stream = ExtResource("13_u3b0j")
+
+[node name="Dead" type="Node" parent="PlayerStateMachine"]
+script = ExtResource("14_li08p")
